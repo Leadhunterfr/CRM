@@ -6,8 +6,8 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // redirige direct vers la page "Outils" ou "Login" par exemple
-    router.push("/Outils");
+    // Redirige vers la page d'accueil du CRM
+    router.push("/contacts"); // ou "/pipeline" si tu veux
   }, [router]);
 
   return (
