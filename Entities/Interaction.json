@@ -1,0 +1,62 @@
+{
+  "name": "Interaction",
+  "type": "object",
+  "properties": {
+    "contact_id": {
+      "type": "string",
+      "description": "ID du contact concerné"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Appel",
+        "Email",
+        "LinkedIn",
+        "Réunion",
+        "Note",
+        "Modification",
+        "NoteInterne"
+      ],
+      "description": "Type d'interaction"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description de l'interaction"
+    },
+    "date_interaction": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date et heure de l'interaction"
+    },
+    "statut_precedent": {
+      "type": "string",
+      "description": "Statut précédent du contact"
+    },
+    "statut_actuel": {
+      "type": "string",
+      "description": "Nouveau statut du contact"
+    },
+    "created_by_user_name": {
+      "type": "string",
+      "description": "Nom de l'utilisateur qui a créé l'interaction"
+    },
+    "mentions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs des utilisateurs mentionnés dans cette interaction"
+    },
+    "internal": {
+      "type": "boolean",
+      "default": false,
+      "description": "Si vrai, cette interaction est interne à l'équipe"
+    }
+  },
+  "required": [
+    "contact_id",
+    "type",
+    "description",
+    "date_interaction"
+  ]
+}
