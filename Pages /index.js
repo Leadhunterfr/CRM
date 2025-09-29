@@ -6,8 +6,7 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirige vers la page d'accueil du CRM
-    router.push("/contacts"); // ou "/pipeline" si tu veux
+    router.push("/login"); // première étape = connexion
   }, [router]);
 
   return (
