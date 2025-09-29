@@ -9,55 +9,43 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // ici tu connectes ton backend / supabase / base44 API
-    // pour valider l'auth utilisateur
-    if (email && password) {
-      // simulate login ok
-      router.push("/dashboard"); // page après login
-    }
+    // Ici tu mets ton check login (API, Supabase, etc.)
+    console.log("Tentative login:", email, password);
+    router.push("/contacts"); // une fois connecté → va vers contacts
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 p-4">
-      <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8">
-        <h1 className="text-2xl font-bold mb-6 text-center">CRM Flow</h1>
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
+        <h1 className="text-2xl font-bold mb-6 text-center">Connexion CRM</h1>
         <form onSubmit={handleLogin} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-slate-700">
-              Email
-            </label>
-            <input
-              type="email"
-              className="mt-1 w-full border px-3 py-2 rounded-lg"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-slate-700">
-              Mot de passe
-            </label>
-            <input
-              type="password"
-              className="mt-1 w-full border px-3 py-2 rounded-lg"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full border rounded-lg p-2"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            className="w-full border rounded-lg p-2"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
           <button
             type="submit"
-            className="w-full bg-slate-900 text-white py-2 rounded-lg hover:bg-slate-800"
+            className="w-full bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700"
           >
             Se connecter
           </button>
         </form>
-        <div className="mt-4 text-center text-sm text-slate-500">
-          Pas encore de compte ?{" "}
-          <a href="/signup" className="text-blue-600 hover:underline">
-            S’inscrire
-          </a>
+        <div className="text-center mt-4">
+          <button className="text-sm text-gray-500 hover:underline">
+            Mot de passe oublié ?
+          </button>
         </div>
       </div>
     </div>
